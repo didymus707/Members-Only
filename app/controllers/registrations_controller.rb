@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   after_action :change_status
-  
+
   private
 
   def sign_up_params
@@ -12,8 +12,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def change_status
-    if user_signed_in?
-      current_user.update_attribute(:active, true)
-    end
+    current_user.update_attribute(:active, true) if user_signed_in?
   end
 end

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+
   def index
     @posts = Post.all.order('created_at DESC')
     @post = Post.new
@@ -23,12 +23,10 @@ class PostsController < ApplicationController
       render 'index'
     end
   end
-  
 
   private
 
   def post_params
     params.require(:post).permit(:author_name, :story)
   end
-
 end
