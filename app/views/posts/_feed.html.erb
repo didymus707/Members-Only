@@ -14,21 +14,22 @@
 
   <% @posts.each do | post | %>
     <div class="box">
-    <% if user_signed_in? %>
       <article class="media">
         <div class="media-left">
+          <% if user_signed_in? %>
           <figure class="image is-64x64">
             <%= gravatar_image_tag(current_user.name, size: 64, alt: current_user.name) %>
           </figure>
+          <% end %>  
         </div>
         <div class="media-content">
           <div class="content">
+          <% if user_signed_in? %>
             <strong><%= post.user.name %></strong><br />
-    <% end %>  
+          <% end %>
             <p><%= post.story%></p>
             <small><%= post.created_at %></small>
           </div>
-          
         </div>
       </article>
     </div>
