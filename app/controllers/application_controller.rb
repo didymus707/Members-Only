@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    self.redirect_to root_path
-    flash[:notice] = "Please Sign in first or Sign up if you don't have an account"
+    return if current_user.present?
+
+    flash[:danger] = "Please Sign in to perform that action or Sign up if you don't have an account"
+    redirect_to root_path
   end
 end
