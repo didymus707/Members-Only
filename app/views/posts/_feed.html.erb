@@ -1,5 +1,5 @@
 <div class="column is-half">
-  <% if is_logged_in? %>
+  <% if logged_in? %>
   <article class="media box">
     <figure class="media-left">
       <p class="image is-64x64">
@@ -16,7 +16,7 @@
     <div class="box">
       <article class="media">
         <div class="media-left">
-          <% if is_logged_in? %>
+          <% if logged_in? %>
           <figure class="image is-64x64">
             <%= gravatar_image_tag(current_user.name, size: 64, alt: current_user.name) %>
           </figure>
@@ -24,7 +24,7 @@
         </div>
         <div class="media-content">
           <div class="content">
-          <% if is_logged_in? %>
+          <% if logged_in? %>
             <strong><%= post.user.name %></strong><br />
           <% end %>
             <p><%= post.story%></p>

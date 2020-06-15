@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :is_logged_in?
+  helper_method :logged_in?
 
-  def is_logged_in?
+  def logged_in?
     !current_user.nil?
   end
 
