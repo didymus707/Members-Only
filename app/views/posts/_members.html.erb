@@ -1,7 +1,7 @@
 <div class="column">
   <nav class="panel">
     <p class="panel-heading">Other Members</p>
-    <% @posts.uniq.each do |post| %>
+    <% @posts.each do |post| %>
       <% if post.user.name == current_user.name %>
         <div class="panel-block dn">
           <article class="media">
