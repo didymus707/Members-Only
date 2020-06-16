@@ -1,0 +1,37 @@
+<div class="column is-half">
+  <% if logged_in? %>
+  <article class="media box">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <%= gravatar_image_tag(current_user.name, size: 64, alt: current_user.name) %>
+      </p>
+    </figure>
+    <div class="media-content">
+      <%= render 'posts/form' %>
+    </div>
+  </article>
+  <% end %>
+
+  <% @posts.each do | post | %>
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <% if logged_in? %>
+          <figure class="image is-64x64">
+            <%= gravatar_image_tag(current_user.name, size: 64, alt: current_user.name) %>
+          </figure>
+          <% end %>  
+        </div>
+        <div class="media-content">
+          <div class="content">
+          <% if logged_in? %>
+            <strong><%= post.user.name %></strong><br />
+          <% end %>
+            <p><%= post.story%></p>
+            <small><%= post.created_at %></small>
+          </div>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
