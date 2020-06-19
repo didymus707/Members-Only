@@ -1,0 +1,15 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+    <% if logged_in? %>
+      <%= render 'profile' %>
+    <% else %>
+      <%= render 'trends' %>
+    <% end %>
+      <%= render 'posts/feed' %>
+    <% if logged_in? %>
+      <%= render 'members' %>
+    <% end %>
+    </div>
+  </div>
+</section>

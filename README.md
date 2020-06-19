@@ -11,10 +11,9 @@ This project is about building an exclusive clubhouse where your members can wri
 ### Usage
 - Clone this repo into your desired folder
 - change directory into the project folder
+- Run bunlde install to install all gems
 - Fire up rails server with `rails server` in your terminal
-- Go to the basic routes 
-> http://localhost:3000/users/new
-> http://localhost:3000/users/id/edit
+
 
 created to access the forms created and perform actions such as edit and update the forms. 
 
