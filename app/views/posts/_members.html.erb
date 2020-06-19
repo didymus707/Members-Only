@@ -1,8 +1,8 @@
 <div class="column">
   <nav class="panel">
     <p class="panel-heading">Other Members</p>
-    <% @posts.each do |post| %>
-      <% if post.user.name == current_user.name %>
+    <% @posts_user.to_a.each do |post| %>
+      <% if post.name == current_user.name %>
         <div class="panel-block dn">
           <article class="media">
             <div class="media-left">
@@ -30,7 +30,7 @@
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong><%= post.user.name %></strong>
+                  <strong><%= post.name %></strong>
                 </p>
               </div>
             </div>
